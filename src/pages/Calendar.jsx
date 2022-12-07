@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   ScheduleComponent,
   ViewsDirective,
@@ -11,14 +11,14 @@ import {
   Inject,
   Resize,
   DragAndDrop,
-} from "@syncfusion/ej2-react-schedule";
-import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
+} from '@syncfusion/ej2-react-schedule';
+import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 
-import { scheduleData } from "../data/dummy";
-import { Header } from "../components";
+import { scheduleData } from '../data/dummy';
+import { Header } from '../components';
 
 // eslint-disable-next-line react/destructuring-assignment
-const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
+const PropertyPane = (props) => <div className='mt-5'>{props.children}</div>;
 
 const Calendar = () => {
   const [scheduleObj, setScheduleObj] = useState();
@@ -34,17 +34,17 @@ const Calendar = () => {
   };
 
   return (
-    <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category="App" title="Calendar" />
+    <div className='m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl'>
+      <Header category='App' title='Calendar' />
       <ScheduleComponent
-        height="650px"
+        height='650px'
         ref={(schedule) => setScheduleObj(schedule)}
         selectedDate={new Date(2021, 0, 10)}
         eventSettings={{ dataSource: scheduleData }}
         dragStart={onDragStart}
       >
         <ViewsDirective>
-          {["Day", "Week", "WorkWeek", "Month", "Agenda"].map((item) => (
+          {['Day', 'Week', 'WorkWeek', 'Month', 'Agenda'].map((item) => (
             <ViewDirective key={item} option={item} />
           ))}
         </ViewsDirective>
@@ -53,15 +53,15 @@ const Calendar = () => {
         />
       </ScheduleComponent>
       <PropertyPane>
-        <table style={{ width: "100%", background: "white" }}>
+        <table style={{ width: '100%', background: 'white' }}>
           <tbody>
-            <tr style={{ height: "50px" }}>
-              <td style={{ width: "100%" }}>
+            <tr style={{ height: '50px' }}>
+              <td style={{ width: '100%' }}>
                 <DatePickerComponent
                   value={new Date(2021, 0, 10)}
                   showClearButton={false}
-                  placeholder="Current Date"
-                  floatLabelType="Always"
+                  placeholder='Current Date'
+                  floatLabelType='Always'
                   change={change}
                 />
               </td>
